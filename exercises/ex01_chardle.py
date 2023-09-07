@@ -12,7 +12,7 @@ if len(str(single_character)) != int(1):
     exit()
 print("Searching for " + single_character + " in " + five_character_word)
 
-instances : int = 0
+instances: int = 0
 if str(five_character_word[0]) == str(single_character):
     print(single_character + " found at index 0")
     instances = instances + 1
