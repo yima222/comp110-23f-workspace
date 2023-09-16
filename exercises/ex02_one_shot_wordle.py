@@ -7,7 +7,7 @@ chances: int = 0
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-secret_word_idx: int = int(six_letter_guess[0])
+secret_word_idx: int = str(six_letter_guess[0])
 secret_pattern: str = ()
 
 if str(six_letter_guess) == secret_word:
