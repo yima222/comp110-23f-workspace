@@ -1,42 +1,39 @@
-"""Ex02 - One Shot Wordle- step closer to wordle"""
+"""Ex02 - One Shot Wordle- step closer to wordle."""
 __author__ = "730668363"
 
 secret_word: str = "python"
-six_letter_guess: str = input("What is your 6-letter guess? ")
-chances: int = 0
+guess: str = input("What is your 6-letter guess? ")
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-check_idx: int = 0
 secret_word_idx: int = str(secret_word[0])
 secret_pattern: str = ""
 
-if len(str(six_letter_guess)) != len(str(secret_word)):
-    while chances <= int(3):
-        if len(str(six_letter_guess)) != len(str(secret_word)):
-            chances += 1
-            guess_again: str = input("That was not 6 letters! Try again: ")
-        elif chances == int(3) and str(six_letter_guess) != str(secret_word):
-            print("Not quite. Play again soon!")
-if len(str(six_letter_guess)) == len(str(secret_word)):
-    check_string: str = ("p" ,"y" ,"t" ,"h" ,"o", "n")
-    while check_idx < len(str(secret_word)):
-        if str(six_letter_guess[check_idx]) == str(secret_word[check_idx]):  
-            secret_pattern = (f"{secret_pattern} {GREEN_BOX}")  
-        elif str(six_letter_guess[check_idx]) in str(check_string):
-            alt_idx: int = 0 
-            present: bool = False                
-            while present and alt_idx < len(str(secret_word)):
-                if str(six_letter_guess[alt_idx]) == str(secret_word[check_idx]):
-                    present = True
-                elif str(six_letter_guess[alt_idx]) != str(secret_word[check_idx]):
-                    alt_idx = alt_idx + 1
-            secret_pattern = (f"{secret_pattern} {YELLOW_BOX}")    
-        else:
-            secret_pattern = (f"{secret_pattern} {WHITE_BOX}")
-        check_idx = check_idx + 1  
-    print(secret_pattern)
-    if str(six_letter_guess) != secret_word:
-        print("Not quite. Play again soon!")
-    elif str(six_letter_guess) == secret_word:
-        print("Woo! You got it!")
+# Correct length
+while len(str(guess)) != len(str(secret_word)):           
+    guess = input(f"That was not {len(secret_word)} letters! Try again: ")
+
+# Letter check & box hints
+# Delete statement if the IF is the same as WHILE
+check_idx: int = 0
+while check_idx < len(secret_word):
+    alt_idx: int = 0 
+    present: bool = False
+    # while six letter guess contains letters in the secret word add yellow or green boxes where appropriate, if not, add a white box
+    while alt_idx < len(secret_word):
+        if guess[check_idx] == secret_word[alt_idx]:
+            present = True
+        alt_idx = alt_idx + 1
+    if guess[check_idx] == secret_word[check_idx]:  
+        secret_pattern = (f"{secret_pattern} {GREEN_BOX}")  
+    elif present == True:
+        secret_pattern = (f"{secret_pattern} {YELLOW_BOX}")    
+    else:
+        secret_pattern = (f"{secret_pattern} {WHITE_BOX}")
+    check_idx = check_idx + 1  
+    
+print(secret_pattern)
+if guess != secret_word:
+    print("Not quite. Play again soon!")
+elif guess == secret_word:
+    print("Woo! You got it!")
