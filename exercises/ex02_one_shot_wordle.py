@@ -16,10 +16,10 @@ if len(str(six_letter_guess)) != len(str(secret_word)):
         if len(str(six_letter_guess)) != len(str(secret_word)):
             chances += 1
             guess_again: str = input("That was not 6 letters! Try again: ")
-        elif chances == int (3) and str(six_letter_guess) != str(secret_word):
+        elif chances == int(3) and str(six_letter_guess) != str(secret_word):
             print("Not quite. Play again soon!")
 if len(str(six_letter_guess)) == len(str(secret_word)):
-    check_string: str = ("p","y","t","h","o","n")
+    check_string: str = ("p" ,"y" ,"t" ,"h" ,"o", "n")
     while check_idx < len(str(secret_word)):
         if str(six_letter_guess[check_idx]) == str(secret_word[check_idx]):  
             secret_pattern = (f"{secret_pattern} {GREEN_BOX}")  
@@ -40,10 +40,3 @@ if len(str(six_letter_guess)) == len(str(secret_word)):
         print("Not quite. Play again soon!")
     elif str(six_letter_guess) == secret_word:
         print("Woo! You got it!")
-
-
-
-
-
-
-
