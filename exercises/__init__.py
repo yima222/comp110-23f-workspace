@@ -73,13 +73,13 @@ if len(str(six_letter_guess)) == int(6):
             secret_pattern = secret_pattern + WHITE_BOX
         check_idx = check_idx + 1  
     alt_idx: int = 0  
-present: bool = str(six_letter_guess[alt_idx]) != str(secret_word[alt_idx]) and False                 
-while present and alt_idx < len(str(secret_word)):
-    if str(six_letter_guess[alt_idx]) == str(secret_word[alt_idx]):
-        present = True
-    elif str(six_letter_guess[alt_idx]) != str(secret_word[alt_idx]):
-        alt_idx = alt_idx + 1
-        secret_pattern = secret_pattern + YELLOW_BOX
+    present: bool = str(six_letter_guess[alt_idx]) != str(secret_word[alt_idx]) and False                 
+    while present and alt_idx < len(str(secret_word)):
+        if str(six_letter_guess[alt_idx]) == str(secret_word[alt_idx]):
+            present = True
+        elif str(six_letter_guess[alt_idx]) != str(secret_word[alt_idx]):
+            alt_idx = alt_idx + 1
+            secret_pattern = secret_pattern + YELLOW_BOX
     print(secret_pattern)
     if str(six_letter_guess) != secret_word:
         print("Not quite. Play again soon!")
