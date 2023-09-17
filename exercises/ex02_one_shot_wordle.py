@@ -1,4 +1,5 @@
-__author__: "730668363"
+"""Ex02 - One Shot Wordle- step closer to wordle"""
+__author__ = "730668363"
 
 secret_word: str = "python"
 six_letter_guess: str = input("What is your 6-letter guess? ")
