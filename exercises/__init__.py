@@ -1,3 +1,5 @@
+
+
 """Ex02 - One Shot Wordle- step closer to wordle."""
 __author__ = "730668363"
 
@@ -6,7 +8,6 @@ guess: str = input("What is your 6-letter guess? ")
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-secret_word_idx: int = str(secret_word[0])
 secret_pattern: str = ""
 
 # Correct length
@@ -25,11 +26,11 @@ while check_idx < len(secret_word):
             present = True
         alt_idx = alt_idx + 1
     if guess[check_idx] == secret_word[check_idx]:  
-        secret_pattern = (f"{secret_pattern} {GREEN_BOX}")  
+        secret_pattern = secret_pattern + GREEN_BOX  
     elif present == True:
-        secret_pattern = (f"{secret_pattern} {YELLOW_BOX}")    
+        secret_pattern = secret_pattern + YELLOW_BOX  
     else:
-        secret_pattern = (f"{secret_pattern} {WHITE_BOX}")
+        secret_pattern = secret_pattern + WHITE_BOX
     check_idx = check_idx + 1  
     
 print(secret_pattern)
