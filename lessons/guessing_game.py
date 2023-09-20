@@ -9,7 +9,12 @@ max_tries: int = 3
 
 while (guess != secret) and (number_of_tries < (max_tries - 1)):
     print("Wrong!")
-    print(f"You have {(max_tries - 1) - number_of_tries} chance!")
+    # Tell them the number of tries/chances they have left, if 1 chance left, use chance/singular. 
+    # Else tries/chances left is more than 1, use chances/plural.
+    if (max_tries - 1) - number_of_tries == 1:
+        print(f"You have {(max_tries - 1) - number_of_tries} chance left!")
+    else:
+        print(f"You have {(max_tries - 1) - number_of_tries} chances left!")
     # If guess is out of bounds, let them know
     if (guess < 1) or (guess > 10):
         print("That's not between 1 and 10!")
