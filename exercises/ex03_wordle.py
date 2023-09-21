@@ -9,4 +9,4 @@ def contains_char(search_for_char: str, char_check: str) -> str:
         return True
     else:
         return False
-    search_for_char_idx = search_for_char_idx + 1
+    
