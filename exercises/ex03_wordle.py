@@ -12,4 +12,4 @@ def contains_char(search_for_char: str, char_check: str) -> str:
     else:
         return False
     
-print(contains_char("abc", "z"))
+print(contains_char("abc", "a"))

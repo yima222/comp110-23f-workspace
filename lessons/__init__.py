@@ -8,7 +8,7 @@ def contains_char(search_for_char: str, char_check: str) -> str:
     while idx < len(search_for_char):
         if char_check == (search_for_char[idx]):
             return True
-    idx = idx + 1
     if char_check != (search_for_char[idx]):
         return False
+    idx = idx + 1
 print(contains_char("abc", "z"))
