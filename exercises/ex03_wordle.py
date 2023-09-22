@@ -5,9 +5,11 @@ def contains_char(search_for_char: str, char_check: str) -> str:
     assert len(char_check) == 1
     """Looks for the input of char in the declared word."""
     idx: int = 0
-    if char_check == (search_for_char[idx]):
-        return True
+    while idx <= len(search_for_char):
+        if char_check == (search_for_char[idx]):
+            return True
+        idx = idx + 1
     else:
         return False
-
-print(contains_char("abc", "a"))
+    
+print(contains_char("abc", "z"))
