@@ -21,9 +21,18 @@ def emojified(guess: str, secret_word: str) -> str:
     GREEN_BOX: str = "\U0001F7E9"
     YELLOW_BOX: str = "\U0001F7E8"
     secret_pattern: str = ""
-    if contains_char is True:
-        secret_pattern = secret_pattern + YELLOW_BOX
-    elif contains_char is False:
-        secret_pattern = secret_pattern + WHITE_BOX
-    print(secret_pattern)
+    check_idx: int = 0
+    while check_idx < len(secret_word):
+        alt_idx: int = 0 
+    # while six letter guess contains letters in the secret word add yellow or green boxes where appropriate, if not, add a white box
+        if contains_char == secret_word[alt_idx]:  
+            secret_pattern = secret_pattern + GREEN_BOX 
+            alt_idx = alt_idx + 1 
+        elif contains_char is True:
+            secret_pattern = secret_pattern + YELLOW_BOX  
+        else:
+            secret_pattern = secret_pattern + WHITE_BOX
+        check_idx = check_idx + 1  
+    return(secret_pattern)
 
+print(emojified("hello", "world"))
