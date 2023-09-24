@@ -18,6 +18,7 @@ def contains_char(search_for_char: str, char_check: str) -> str:
         return False
     alt_idx = alt_idx + 1
 
+
 def emojified(guess: str, secret_word: str) -> str:
     """Checks for the characters of the secret word in the guess inputted."""
     # Length of the guess must be the same as the secret word
@@ -33,12 +34,14 @@ def emojified(guess: str, secret_word: str) -> str:
         if  guess[check_idx] == secret_word[check_idx]:
             secret_pattern = secret_pattern + GREEN_BOX 
             alt_idx = alt_idx + 1 
+        # Enter the argugments for contain_char in order to call the function correctly
         elif contains_char(guess, (secret_word[check_idx])) is True:
             secret_pattern = secret_pattern + YELLOW_BOX  
         else:
             secret_pattern = secret_pattern + WHITE_BOX
         check_idx = check_idx + 1  
     return(secret_pattern)
+
 
 def input_guess(guess_exp_len: int) -> int:
     """Prompts user for a correct length of guess for the secret word"""
@@ -48,8 +51,7 @@ def input_guess(guess_exp_len: int) -> int:
     # The correct length guess is returned after exiting the above while loop
     return guess
 
+
 def main() -> None:
     """The entrypoint of the program and main game loop"""
     # Code for the wordle game
-
-print(emojified("yikyak", "tiktok"))
