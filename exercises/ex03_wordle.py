@@ -30,10 +30,10 @@ def emojified(guess: str, secret_word: str) -> str:
     while check_idx < len(secret_word):
         alt_idx: int = 0 
     # while six letter guess contains letters in the secret word add yellow or green boxes where appropriate, if not, add a white box
-        if contains_char == secret_word[alt_idx]:  
+        if  guess[check_idx] == secret_word[check_idx]:
             secret_pattern = secret_pattern + GREEN_BOX 
             alt_idx = alt_idx + 1 
-        elif contains_char is True:
+        elif contains_char(guess, (secret_word[check_idx])) is True:
             secret_pattern = secret_pattern + YELLOW_BOX  
         else:
             secret_pattern = secret_pattern + WHITE_BOX
@@ -52,3 +52,4 @@ def main() -> None:
     """The entrypoint of the program and main game loop"""
     # Code for the wordle game
 
+print(emojified("yikyak", "tiktok"))
