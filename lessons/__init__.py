@@ -18,6 +18,7 @@ def contains_char(search_for_char: str, char_check: str) -> str:
         return False
     alt_idx = alt_idx + 1
 
+
 def emojified(guess: str, secret_word: str) -> str:
     """Checks for the characters of the secret word in the guess inputted."""
     # Length of the guess must be the same as the secret word
@@ -30,15 +31,17 @@ def emojified(guess: str, secret_word: str) -> str:
     while check_idx < len(secret_word):
         alt_idx: int = 0 
     # while six letter guess contains letters in the secret word add yellow or green boxes where appropriate, if not, add a white box
-        if contains_char == secret_word[alt_idx]:  
+        if  guess[check_idx] == secret_word[check_idx]:
             secret_pattern = secret_pattern + GREEN_BOX 
             alt_idx = alt_idx + 1 
-        elif contains_char is True:
+        # Enter the argugments for contain_char in order to call the function correctly
+        elif contains_char(guess, (secret_word[check_idx])) is True:
             secret_pattern = secret_pattern + YELLOW_BOX  
         else:
             secret_pattern = secret_pattern + WHITE_BOX
         check_idx = check_idx + 1  
     return(secret_pattern)
+
 
 def input_guess(guess_exp_len: int) -> int:
     """Prompts user for a correct length of guess for the secret word"""
@@ -48,10 +51,35 @@ def input_guess(guess_exp_len: int) -> int:
     # The correct length guess is returned after exiting the above while loop
     return guess
 
+
 def main() -> None:
     """The entrypoint of the program and main game loop"""
     # Code for the wordle game
+    secret_word: str = "codes"
+    num_turn: int = 1
+    max_turns: int = 6
+    current_turn: str = (f"=== Turn {num_turn}/{max_turns} ===")
+    guess: str = (input_guess(len(secret_word)))
 
+    while num_turn < max_turns and guess != secret_word:
+        print(current_turn)
+        input_guess(len(secret_word))
+        print(emojified(secret_word, guess))
+        num_turn = num_turn + 1
+
+    # Once the six turns are all used, print the below results accordingly
+    # This is when the code exits the while loop above
+    if guess == secret_word:
+        print(emojified(secret_word, guess))
+        print(f"You won in {num_turn}/{max_turns} turns!")
+    else:
+        print(emojified(secret_word, guess))
+        print(("X/6 - Sorry, try again tomorrow!"))
+
+if __name__ == "__main__":
+    main()
+
+main()
 
 
 
