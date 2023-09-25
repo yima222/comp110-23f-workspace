@@ -64,7 +64,7 @@ def main() -> None:
     while num_turn <= max_turns and guess != secret_word:
         print(f"=== Turn {num_turn}/{max_turns} ===")
         guess = str(input_guess(len(secret_word)))
-        print(emojified(secret_word, guess))
+        print(emojified(guess, secret_word))
         num_turn = num_turn + 1
     # Once the six turns are all used, print the below results accordingly
     # This is when the code exits the while loop above
