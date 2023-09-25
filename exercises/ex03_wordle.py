@@ -2,7 +2,7 @@
 __author__ = "730668363"
 
 
-def contains_char(search_for_char: str, char_check: str) -> str:
+def contains_char(search_for_char: str, char_check: str) -> bool:
     """Looks for the input of char in the declared word."""
     # Length of the input must be one character
     assert len(char_check) == 1
