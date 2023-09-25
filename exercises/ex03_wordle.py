@@ -1,4 +1,4 @@
-"""Structured Wordle with defining and calling functions."""
+"""Ex02- Structured Wordle with defining and calling functions."""
 __author__ = "730668363"
 
 def contains_char(search_for_char: str, char_check: str) -> str:
@@ -77,4 +77,4 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
-main()
+
