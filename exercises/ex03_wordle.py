@@ -44,7 +44,7 @@ def emojified(secret_word: str, guess: str) -> str:
     return secret_pattern
 
 
-def input_guess(guess_exp_len: int) -> int:
+def input_guess(guess_exp_len: int) -> str:
     """Prompts user for a correct length of guess for the secret word."""
     guess: str = input(f"Enter a {guess_exp_len} character word: ")
     while len(guess) != guess_exp_len:           
