@@ -1,6 +1,7 @@
 """Ex02- Structured Wordle with defining and calling functions."""
 __author__ = "730668363"
 
+
 def contains_char(search_for_char: str, char_check: str) -> str:
     """Looks for the input of char in the declared word."""
     # Length of the input must be one character
@@ -19,7 +20,7 @@ def contains_char(search_for_char: str, char_check: str) -> str:
     alt_idx = alt_idx + 1
 
 
-def emojified(guess: str, secret_word: str) -> str:
+def emojified(secret_word: str, guess: str) -> str:
     """Checks for the characters of the secret word in the guess inputted."""
     # Length of the guess must be the same as the secret word
     assert len(guess) == len(secret_word)
@@ -31,7 +32,7 @@ def emojified(guess: str, secret_word: str) -> str:
     while check_idx < len(secret_word):
         alt_idx: int = 0 
     # while six letter guess contains letters in the secret word add yellow or green boxes where appropriate, if not, add a white box
-        if  guess[check_idx] == secret_word[check_idx]:
+        if guess[check_idx] == secret_word[check_idx]:
             secret_pattern = secret_pattern + GREEN_BOX 
             alt_idx = alt_idx + 1 
         # Enter the argugments for contain_char in order to call the function correctly
@@ -40,11 +41,11 @@ def emojified(guess: str, secret_word: str) -> str:
         else:
             secret_pattern = secret_pattern + WHITE_BOX
         check_idx = check_idx + 1  
-    return(secret_pattern)
+    return secret_pattern
 
 
 def input_guess(guess_exp_len: int) -> int:
-    """Prompts user for a correct length of guess for the secret word"""
+    """Prompts user for a correct length of guess for the secret word."""
     guess: str = input(f"Enter a {guess_exp_len} character word: ")
     while len(guess) != guess_exp_len:           
         guess = input(f"That was not {guess_exp_len} chars! Try again: ")
@@ -53,7 +54,7 @@ def input_guess(guess_exp_len: int) -> int:
 
 
 def main() -> None:
-    """The entrypoint of the program and main game loop"""
+    """The entrypoint of the program and main game loop."""
     # Code for the wordle game
     secret_word: str = "codes"
     guess: str = ""
@@ -74,7 +75,6 @@ def main() -> None:
         print(("X/6 - Sorry, try again tomorrow!"))
         exit()
 
+
 if __name__ == "__main__":
     main()
-
-
