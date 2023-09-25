@@ -56,24 +56,21 @@ def main() -> None:
     """The entrypoint of the program and main game loop"""
     # Code for the wordle game
     secret_word: str = "codes"
+    guess: str = (input_guess(len(secret_word)))
     num_turn: int = 1
     max_turns: int = 6
-    current_turn: str = (f"=== Turn {num_turn}/{max_turns} ===")
-    guess: str = (input_guess(len(secret_word)))
 
-    while num_turn < max_turns and guess != secret_word:
-        print(current_turn)
+    while num_turn <= max_turns and guess != secret_word:
+        print(f"=== Turn {num_turn}/{max_turns} ===")
         input_guess(len(secret_word))
         print(emojified(secret_word, guess))
         num_turn = num_turn + 1
-
     # Once the six turns are all used, print the below results accordingly
     # This is when the code exits the while loop above
     if guess == secret_word:
         print(emojified(secret_word, guess))
         print(f"You won in {num_turn}/{max_turns} turns!")
     else:
-        print(emojified(secret_word, guess))
         print(("X/6 - Sorry, try again tomorrow!"))
 
 if __name__ == "__main__":
