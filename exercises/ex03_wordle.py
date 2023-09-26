@@ -69,11 +69,10 @@ def main() -> None:
     # Once the six turns are all used, print the below results accordingly
     # This is when the code exits the while loop above
     if guess == secret_word:
-        print(f"You won in {num_turn - 1}/{max_turns} turns!")
-        exit()
+        return print(f"You won in {num_turn - 1}/{max_turns} turns!")
+        
     else:
-        print(("X/6 - Sorry, try again tomorrow!"))
-        exit()
+        return print(("X/6 - Sorry, try again tomorrow!"))
 
 
 if __name__ == "__main__":
