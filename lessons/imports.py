@@ -2,4 +2,5 @@
 
 from lessons import my_functions
 
-print(my_functions.addition(1,2))
+if __name__ == "__main__":
+    print("Howdy!")
