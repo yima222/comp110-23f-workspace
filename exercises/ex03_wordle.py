@@ -6,18 +6,17 @@ def contains_char(search_for_char: str, char_check: str) -> bool:
     """Looks for the input of char in the declared word."""
     # Length of the input must be one character
     assert len(char_check) == 1
+    char_present: bool = False
     idx: int = 0
-    while idx < len(search_for_char):
-        alt_idx: int = 0
+    while (char_present is False) and (idx < len(search_for_char)):
         # Tell them True if the guessed character is in the word 
         # (this doesn't indicate the index at which the guessed char is in the word)
         if char_check == (search_for_char[idx]):
+            char_present is True
             return True
-        idx = idx + 1
-    # Tell them False if the guessed character is not in the word
-    if char_check != (search_for_char[alt_idx]):
-        return False
-    alt_idx = alt_idx + 1
+        else:
+            idx = idx + 1
+    return False
 
 
 def emojified(secret_word: str, guess: str) -> str:
@@ -60,7 +59,6 @@ def main() -> None:
     guess: str = ""
     num_turn: int = 1
     max_turns: int = 6
-
     while num_turn <= max_turns and guess != secret_word:
         print(f"=== Turn {num_turn}/{max_turns} ===")
         guess = str(input_guess(len(secret_word)))
@@ -70,7 +68,6 @@ def main() -> None:
     # This is when the code exits the while loop above
     if guess == secret_word:
         return print(f"You won in {num_turn - 1}/{max_turns} turns!")
-        
     else:
         return print(("X/6 - Sorry, try again tomorrow!"))
 

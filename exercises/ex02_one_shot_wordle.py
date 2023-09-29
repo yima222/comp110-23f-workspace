@@ -25,7 +25,7 @@ while check_idx < len(secret_word):
         alt_idx = alt_idx + 1
     if guess[check_idx] == secret_word[check_idx]:  
         secret_pattern = secret_pattern + GREEN_BOX  
-    elif present is True:
+    elif present == True:
         secret_pattern = secret_pattern + YELLOW_BOX  
     else:
         secret_pattern = secret_pattern + WHITE_BOX
