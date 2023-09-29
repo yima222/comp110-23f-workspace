@@ -70,7 +70,3 @@ def main() -> None:
         return print(f"You won in {num_turn - 1}/{max_turns} turns!")
     else:
         return print(("X/6 - Sorry, try again tomorrow!"))
-
-
-if __name__ == "__main__":
-    main()
