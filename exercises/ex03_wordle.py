@@ -1,4 +1,4 @@
-"""Ex02- Structured Wordle with defining and calling functions."""
+"""Ex03- Structured Wordle with defining and calling functions."""
 __author__ = "730668363"
 
 
@@ -47,7 +47,7 @@ def input_guess(guess_exp_len: int) -> str:
     """Prompts user for a correct length of guess for the secret word."""
     guess: str = input(f"Enter a {guess_exp_len} character word: ")
     while len(guess) != guess_exp_len:    
-        guess = input(f"That was not {guess_exp_len} chars! Try again: ")
+        guess = input(f"That wasn't {guess_exp_len} chars! Try again: ")
     # The correct length guess is returned after exiting the above while loop
     return guess
 
@@ -71,7 +71,6 @@ def main() -> None:
     else:
         return print(("X/6 - Sorry, try again tomorrow!"))
    
-
 
 if __name__ == "__main__":
     main()
