@@ -3,12 +3,17 @@ __author__ = "730668363"
 
 def all(int_list: list[int], input: int) -> bool:
     check_idx: int = 0
-    int_check: bool = False
-    while (int_check is False) and (check_idx < len(int_list)):
-        while input == int_list[check_idx]:
-            check_idx += 1
-        return True
-       
+    while (check_idx < len(int_list)):
+        if input != int_list[check_idx]:
+            return False
+        elif input == int_list[check_idx]:
+            while check_idx < len(int_list):
+                if input != int_list[check_idx]:
+                    return False
+                elif input == int_list[check_idx]:
+                    check_idx += 1
+            return True
+        
 
 def max(int_list: list[int]) -> int:
     max_idx: int = 0
@@ -25,4 +30,4 @@ def is_equal(list1: list[int], list2: list[list]) -> bool:
             return False
     return True
 
-print(is_equal([1, 0, 1], [1, 0, 1]))
+print(all([1, 1, 1, 1], 1 ))
