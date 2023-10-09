@@ -3,7 +3,7 @@ __author__ = "730668363"
 
 
 def all(int_list: list[int], input: int) -> bool:
-    """Searches through a list of integers to determine if all the integers is the same as the input. """
+    """Searches through a list of integers to determine if all the integers is the same as the input."""
     check_idx: int = 0
     if len(int_list) == 0:
         return False
