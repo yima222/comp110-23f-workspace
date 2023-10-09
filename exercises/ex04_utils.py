@@ -42,7 +42,7 @@ def is_equal(list1: list[int], list2: list[int]) -> bool:
     """Searches through two lists to determine if all the elemenst are the same in both lists."""
     list_idx: int = 0
     equal: bool = False
-    while (equal is False) and (list_idx < (len(list1)) and (list_idx<len(list2))):
+    while (equal is False) and ((list_idx < (len(list1)) or (list_idx < len(list2)))):
         if list1[list_idx] == list2[list_idx]:
             equal is True
             list_idx += 1
