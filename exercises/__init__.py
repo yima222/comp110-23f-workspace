@@ -1,40 +1,51 @@
-
-
-"""Ex02 - One Shot Wordle- step closer to wordle."""
+"""Ex04- Building list functions to practice computational thinking."""
 __author__ = "730668363"
 
-secret_word: str = "python"
-guess: str = input("What is your 6-letter guess? ")
-WHITE_BOX: str = "\U00002B1C"
-GREEN_BOX: str = "\U0001F7E9"
-YELLOW_BOX: str = "\U0001F7E8"
-secret_pattern: str = ""
 
-# Correct length
-while len(str(guess)) != len(str(secret_word)):           
-    guess = input(f"That was not {len(secret_word)} letters! Try again: ")
+def all(int_list: list[int], input: int) -> bool:
+    """Searches through a list of integers to determine if all the integers is the same as the input."""
+    check_idx: int = 0
+    if len(int_list) == 0:
+        return False
+    while (check_idx < len(int_list)):
+        if input != int_list[check_idx]:
+            return False
+        elif input == int_list[check_idx]:
+            # Nested while loop to allow program to check all the numbers in the list
+            while check_idx < len(int_list):
+                if input != int_list[check_idx]:
+                    return False
+                elif input == int_list[check_idx]:
+                    check_idx += 1
+            return True
+        
 
-# Letter check & box hints
-# Delete statement if the IF is the same as WHILE
-check_idx: int = 0
-while check_idx < len(secret_word):
-    alt_idx: int = 0 
-    present: bool = False
-    # while six letter guess contains letters in the secret word add yellow or green boxes where appropriate, if not, add a white box
-    while alt_idx < len(secret_word):
-        if guess[check_idx] == secret_word[alt_idx]:
-            present = True
-        alt_idx = alt_idx + 1
-    if guess[check_idx] == secret_word[check_idx]:  
-        secret_pattern = secret_pattern + GREEN_BOX  
-    elif present == True:
-        secret_pattern = secret_pattern + YELLOW_BOX  
-    else:
-        secret_pattern = secret_pattern + WHITE_BOX
-    check_idx = check_idx + 1  
-    
-print(secret_pattern)
-if guess != secret_word:
-    print("Not quite. Play again soon!")
-elif guess == secret_word:
-    print("Woo! You got it!")
+def max(int_list: list[int]) -> int:
+    """Searches through a list of integers to find the largest integer."""
+    if len(int_list) == 0:
+        raise ValueError("max() arg is an empty List")
+    elif len(int_list) > 0:
+        max_idx: int = 0
+        # max_int allows program to update the number
+        # if the current number in the list is greater than
+        # the one before it
+        max_int: int = int(int_list[0])
+        while max_idx < len(int_list):
+            present_int: int = int(int_list[max_idx])
+            if present_int > max_int:
+                max_int = present_int
+            max_idx += 1
+        return max_int
+
+
+def is_equal(list1: list[int], list2: list[int]) -> bool:
+    """Searches through two lists to determine if all the elemenst are the same in both lists."""
+    list1_idx: int = 0
+    list2_idx: int = 0
+    while ((list1_idx < (len(list1)) or (list2_idx < len(list2)))):
+        if list1[list1_idx] != list2[list2_idx]:
+            return False
+        elif list1[list1_idx] == list2[list2_idx]:
+            list1_idx += 1
+            list2_idx += 1
+            return True
