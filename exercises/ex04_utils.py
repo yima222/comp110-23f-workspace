@@ -20,6 +20,7 @@ def all(int_list: list[int], input: int) -> bool:
             return True
     return True        
 
+
 def max(int_list: list[int]) -> int:
     """Searches through a list of integers to find the largest integer."""
     if len(int_list) == 0:
@@ -37,6 +38,7 @@ def max(int_list: list[int]) -> int:
             max_idx += 1
         return max_int
     return max_int
+
 
 def is_equal(list1: list[int], list2: list[int]) -> bool:
     """Searches through two lists to determine if all the elements are the same in both lists."""
