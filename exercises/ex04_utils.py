@@ -41,14 +41,12 @@ def max(int_list: list[int]) -> int:
 def is_equal(list1: list[int], list2: list[int]) -> bool:
     """Searches through two lists to determine if all the elements are the same in both lists."""
     list_idx: int = 0
-    match_int: bool = True
     if len(list1) != len(list2):
         return False
-    while (list_idx < len(list1)) and (list_idx < len(list2)) :
+    while (list_idx < len(list1)) and (list_idx < len(list2)):
         if list1[list_idx] != list2[list_idx]:
             return False
         elif list1[list_idx] == list2[list_idx]:
             list_idx += 1
     return True
 
-print(is_equal([1, 2, 1], [1, 2]))
