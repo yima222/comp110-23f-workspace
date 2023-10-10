@@ -49,4 +49,3 @@ def is_equal(list1: list[int], list2: list[int]) -> bool:
         elif list1[list_idx] == list2[list_idx]:
             list_idx += 1
     return True
-
