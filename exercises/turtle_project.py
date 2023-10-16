@@ -24,6 +24,23 @@ def main() -> None:
     ertle.begin_fill()
     draw_square(ertle, 230, 300, 80)
     ertle.end_fill()
+    # Draws triangles to represent sun rays
+    ertle.color(253, 184, 19)
+    ertle.begin_fill()
+    draw_triangle(ertle, 180, 250, 30)
+    ertle.end_fill()
+    ertle.color(253, 184, 19)
+    ertle.begin_fill()
+    draw_triangle(ertle, 190, 190, 30)
+    ertle.end_fill()
+    ertle.color(253, 184, 19)
+    ertle.begin_fill()
+    draw_triangle(ertle, 240, 180, 30)
+    ertle.end_fill()
+    ertle.color(253, 184, 19)
+    ertle.begin_fill()
+    draw_triangle(ertle, 280, 180, 30)
+    ertle.end_fill()
     # Declare your Turtle variables here
     # Call the procedures you define and pass your Turtles as an argument
     done()
@@ -60,6 +77,22 @@ def draw_square(b_turtle: Turtle, x: float, y: float, width: float) -> None:
         b_turtle.right(90)
         i += 1
 
+
+def draw_triangle(c_turtle: Turtle, x: float, y: float, width: float) -> None:
+    """Draw a wave shape of the given width whose top left corner is located at x, y."""
+    c_turtle.penup()
+    c_turtle.goto(x, y)
+    c_turtle.setheading(0.0)
+    c_turtle.pendown()
+    
+    i: int = 0
+    while (i < 3):
+        c_turtle.forward(width)
+        c_turtle.left(120)
+        i = i + 1
+    
+
+# Create a blue trapezoid draw function to generate a curve in the sand
 
 # Use the __name__ is "__main__" idiom shown in class
 if __name__ == "__main__":
