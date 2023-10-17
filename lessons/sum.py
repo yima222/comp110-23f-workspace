@@ -27,4 +27,3 @@ def f_range_sum(vals: list[float]) -> float:
         values: float = vals[idx]
         sum_all += values
     return sum_all
-
