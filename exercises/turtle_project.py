@@ -12,11 +12,11 @@ def main() -> None:
     # Draws a sand colored rectangle as the beach and
     # Draws a light blue colored rectangle as the ocean
     ertle.color(194, 178, 128)
-    ertle.begin_fill( )
+    ertle.begin_fill()
     draw_rectangle(ertle, -320, 0, 320)
     ertle.end_fill()
     ertle.color(173, 216, 230)
-    ertle.begin_fill( )
+    ertle.begin_fill()
     draw_rectangle(ertle, -320, 320, 320)
     ertle.end_fill()
     # Draws a yellow square as the sun
@@ -26,15 +26,15 @@ def main() -> None:
     ertle.end_fill()
     # Draws triangles to represent sun rays
     i: int = 0
-    x: int = 0
-    y: int = 0
+    x1: int = 0
+    y1: int = 0
     while (i < 3):
         ertle.color(253, 184, 19)
         ertle.begin_fill()
-        draw_triangle(ertle, 160 + x, 260 + y, 30)
+        draw_triangle(ertle, 160 + x1, 260 + y1, 30)
         ertle.end_fill()
-        x += 40
-        y -= 60
+        x1 += 40
+        y1 -= 60
         i += 1
     # Draw a sideways trapezoid with an upside down trapezoid to represent the fans of boats on the ocean
     ertle.color(173, 106, 250)
@@ -42,18 +42,24 @@ def main() -> None:
     draw_sideway_trapezoid(ertle, -300, 50, 70)
     ertle.end_fill()
     ertle.color(100, 100, 200)
-    ertle.begin_fill( )
-    draw_updown_trapezoid(ertle, -310, 50, 60 )
+    ertle.begin_fill()
+    draw_updown_trapezoid(ertle, -310, 50, 60)
     ertle.end_fill()
     # Trapezoid to represent curve of ocean
-    ertle.pencolor(173, 106, 250)
-    ertle.color(173, 216, 230)
-    ertle.begin_fill( )
-    draw_updown_trapezoid(ertle, -320, 0, 640 )
-    ertle.end_fill()
+    ii: int = 0
+    x2: int = 0
+    while (ii < 6):
+        ertle.pencolor(173, 106, 250)
+        ertle.color(173, 216, 230)
+        ertle.begin_fill()
+        draw_updown_trapezoid(ertle, -320 + x2, 0, 128)
+        ertle.end_fill()
+        x2 += 128
+        ii += 1
     # Declare your Turtle variables here
     # Call the procedures you define and pass your Turtles as an argument
     done()
+
 
 # Define the procedures for other components
 def draw_rectangle(a_turtle: Turtle, x: float, y: float, width: float) -> None:
@@ -65,10 +71,10 @@ def draw_rectangle(a_turtle: Turtle, x: float, y: float, width: float) -> None:
     a_turtle.pendown()
     i: int = 0
     while i < 2:
-        width = width*2
+        width = width * 2
         a_turtle.forward(width)
         a_turtle.right(90)
-        width = width/2
+        width = width / 2
         a_turtle.forward(width)
         a_turtle.right(90)
         i = i + 1
@@ -109,13 +115,13 @@ def draw_sideway_trapezoid(d_turtle: Turtle, x: float, y: float, width: float) -
     d_turtle.goto(x, y)
     d_turtle.setheading(0.0)
     d_turtle.pendown()
-    width = width/2
+    width = width / 2
     d_turtle.forward(width)
     d_turtle.left(60)
     d_turtle.forward(width)
     d_turtle.left(60)
     d_turtle.forward(width)
-    width = width*2
+    width = width * 2
     d_turtle.left(120)
     d_turtle.forward(width)
 
@@ -129,12 +135,13 @@ def draw_updown_trapezoid(e_turtle: Turtle, x: float, y: float, width: float) ->
     e_turtle.pendown()
     e_turtle.forward(width)
     e_turtle.right(120)
-    width = width/2
+    width = width / 2
     e_turtle.forward(width)
     e_turtle.right(60)
     e_turtle.forward(width)
     e_turtle.right(60)
     e_turtle.forward(width)
+
 
 def draw_line(f_turtle: Turtle, x: float, y: float, width: float) -> None:
     """Draw lines whose left point starts at x, y."""
@@ -144,6 +151,7 @@ def draw_line(f_turtle: Turtle, x: float, y: float, width: float) -> None:
     f_turtle.setheading(0.0)
     f_turtle.pendown()
     f_turtle.forward(width)
+
 
 # Use the __name__ is "__main__" idiom shown in class
 if __name__ == "__main__":
