@@ -1,4 +1,5 @@
-"""A program that uses Turtle and functions to create a peaceful ocean scene."""
+"""A program that uses Turtle and functions to create a peaceful ocean scene,
+attempting Above and beyond---try something fun---using the circle() function in Turtle."""
 
 __author__ = "730668363"
 
@@ -41,9 +42,25 @@ def main() -> None:
     ertle.begin_fill()
     draw_sideway_trapezoid(ertle, -300, 50, 70)
     ertle.end_fill()
-    ertle.color(100, 100, 200)
+    ertle.color(128, 128, 128)
     ertle.begin_fill()
     draw_updown_trapezoid(ertle, -310, 50, 60)
+    ertle.end_fill()
+    ertle.color(37, 203, 137)
+    ertle.begin_fill()
+    draw_sideway_trapezoid(ertle, -180, 150, 70)
+    ertle.end_fill()
+    ertle.color(128, 128, 128)
+    ertle.begin_fill()
+    draw_updown_trapezoid(ertle, -190, 150, 60)
+    ertle.end_fill()
+    ertle.color(238, 65, 12)
+    ertle.begin_fill()
+    draw_sideway_trapezoid(ertle, -50, 70, 70)
+    ertle.end_fill()
+    ertle.color(128, 128, 128)
+    ertle.begin_fill()
+    draw_updown_trapezoid(ertle, -60, 70, 60)
     ertle.end_fill()
     # Trapezoid to represent curve of ocean
     ii: int = 0
@@ -56,6 +73,22 @@ def main() -> None:
         ertle.end_fill()
         x2 += 128
         ii += 1
+    # Draw circle with smaller circles to represent a polka-dotted beachball
+    ertle.color(161, 246, 104)
+    ertle.begin_fill()
+    draw_circle(ertle, 50, 160, -230)
+    ertle.end_fill()
+    iii: int = 0
+    x3: int = 0
+    y3: int = 0
+    while (iii < 7):
+        ertle.color(246, 104, 222)
+        ertle.begin_fill()
+        draw_circle(ertle, 5, 130 + x3, -215 + y3)
+        ertle.end_fill() 
+        x3 += 10
+        y3 += 10
+        iii += 1
     # Declare your Turtle variables here
     # Call the procedures you define and pass your Turtles as an argument
     done()
@@ -143,14 +176,14 @@ def draw_updown_trapezoid(e_turtle: Turtle, x: float, y: float, width: float) ->
     e_turtle.forward(width)
 
 
-def draw_line(f_turtle: Turtle, x: float, y: float, width: float) -> None:
-    """Draw lines whose left point starts at x, y."""
-    f_turtle.speed(100)
-    f_turtle.penup()
-    f_turtle.goto(x, y)
-    f_turtle.setheading(0.0)
-    f_turtle.pendown()
-    f_turtle.forward(width)
+def draw_circle(g_turtle: Turtle, radius: float, x: float, y: float) ->None:
+    """Draw circle whoes center is at x, y."""
+    g_turtle.speed(100)
+    g_turtle.penup()
+    g_turtle.goto(x, y)
+    g_turtle.setheading(0.0)
+    g_turtle.pendown()
+    g_turtle.circle(radius)
 
 
 # Use the __name__ is "__main__" idiom shown in class
