@@ -1,5 +1,7 @@
-"""A program that uses Turtle and functions to create a peaceful ocean scene,
-attempting Above and beyond---try something fun---using the circle() function in Turtle."""
+"""A program that uses Turtle and functions to create a peaceful ocean scene.
+
+Attempting Above and beyond---try something fun---using the circle() function in Turtle.
+"""
 
 __author__ = "730668363"
 
@@ -176,7 +178,7 @@ def draw_updown_trapezoid(e_turtle: Turtle, x: float, y: float, width: float) ->
     e_turtle.forward(width)
 
 
-def draw_circle(g_turtle: Turtle, radius: float, x: float, y: float) ->None:
+def draw_circle(g_turtle: Turtle, radius: float, x: float, y: float) -> None:
     """Draw circle whoes center is at x, y."""
     g_turtle.speed(100)
     g_turtle.penup()
