@@ -12,7 +12,7 @@ __author__ = "730668363"
 def count(org_list: list[str]) -> dict[str, int]:
     org_dictionary: dict()
     idx: int = 0
-    current_value: str = list[idx]
+    current_value: str = org_list[idx]
     cv_count: int = 0
     while idx <= len(org_list):
         if current_value in org_dictionary:
@@ -22,15 +22,16 @@ def count(org_list: list[str]) -> dict[str, int]:
             cv_count += 1
             org_dictionary[current_value] = cv_count
         return org_dictionary
-
+    
 
 #def alphabetizer(a_list: list[str]) -> dict[str, list[str]]:
 
 
 def update_attendance(presence: dict[str, list[str]], week_day: str, student: str) -> dict[str, list[str]]:
+    attendance_log: ()
     if student in week_day:
-        presence[student] = week_day
-    return presence
+        attendance_log[week_day] = student
+    return attendance_log
 attendance_log: dict = {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"]}
 update_attendance(attendance_log, "Tuesday" , "Vrinda")
 update_attendance(attendance_log, "Wednesday" , "Kaleb")
