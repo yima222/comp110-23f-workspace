@@ -7,12 +7,9 @@ def zip(l1: list[str], l2: list[int]) -> dict[str, int]:
     if len(l1) == len(l2) and (len(l1) != 0) and (len(l2) != 0):
         idx: int = 0
         while (idx < len(l1)) and (idx < len(l2)):
-            final_zip = [l1[idx], l2[idx]]
+            final_zip[(l1[idx])] = (l2[idx])
             idx += 1
         return final_zip
     else:
         return final_zip
-        
-
-print(zip(["Happy", "Tuesday"], [1, 2]))
     
