@@ -1,6 +1,7 @@
 """Combining two lists into a dictionary."""
 __author__ = "730668363"
 
+
 def zip(l1: list[str], l2: list[int]) -> dict[str, int]:
     """Combines an input str list 1 and an input int list 2 into a dictionary with the keys being list 1 and values being list 2."""
     final_zip = dict()
