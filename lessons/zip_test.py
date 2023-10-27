@@ -15,8 +15,8 @@ def test_zip_one_key_and_value() -> None:
     assert zip([test_list1], [test_list2]) == {'Happy': 1}
 
 
-def test_different_len_key_and_values() -> None:
-    """zip(["Happy", "Tuesday"], [1]) = {}."""
+def test_multiple_key_and_values() -> None:
+    """zip(["Happy", "Tuesday"], [1, 2]) = {'Happy': 1, 'Tuesday': 2}."""
     test_list1: list[str] = "Happy", "Tuesday"
-    test_list2: list[int] = 1
-    assert zip([test_list1], [test_list2]) == {}
+    test_list2: list[int] = 1, 2
+    assert zip([test_list1], [test_list2]) == {'Happy': 1, 'Tuesday': 2}
