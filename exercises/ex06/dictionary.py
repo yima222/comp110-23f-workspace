@@ -14,7 +14,7 @@ def invert(dictionary: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(dictionary: dict[str, str]) -> str:
     """Given a dict of names and colors, returns the color that appears most frequently."""
-    pop_color: dict()
+    pop_color = ()
     for names in dictionary:
         color = dictionary[names]
         if color in pop_color:
@@ -24,7 +24,7 @@ def favorite_color(dictionary: dict[str, str]) -> str:
 print(favorite_color({"Marc": "yellow", "Ezri": "blue", "Kris": "blue"}))
 
 def count(org_list: list[str]) -> dict[str, int]:
-    org_dictionary: dict()
+    org_dictionary = dict
     idx: int = 0
     current_value: str = org_list[idx]
     cv_count: int = 0
