@@ -4,7 +4,7 @@ __author__ = "730668363"
 
 def short_words(org_list: list[str]) -> list[str]:
     """Filters out the shorter words."""
-    final_list = []
+    final_list: list[str] = []
     for words in org_list:
         if len(words) < 5:
             final_list.append(words)
