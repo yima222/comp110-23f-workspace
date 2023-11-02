@@ -52,7 +52,7 @@ def alphabetizer(a_list: list[str]) -> dict[str, list[str]]:
         idx: int = 0
         letter1 = word[0].lower()
         if letter1 in ordered_dict and (word[idx] == letter1):
-            ordered_dict[letter1] += word
+            ordered_dict[letter1] += [word]
         else:
             ordered_dict[letter1] = [word]
     return ordered_dict
