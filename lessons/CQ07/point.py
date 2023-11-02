@@ -14,7 +14,12 @@ class Point:
         self.x = x_init
         self.y = y_init
     
-    def scale_by(self, factor: int) -> Point:
+    def scale_by(self, factor: int) -> None:
+        """Update the existing x and y by multiplying by factor."""
+        self.x *= factor
+        self.y *= factor
+
+    def scale(self, factor: int) -> Point:
         """A Method that doesn't mutate the point but modifies the x and y to create a new point."""
         new_point: Point = Point(self.x * factor, self.y * factor)
         return new_point
