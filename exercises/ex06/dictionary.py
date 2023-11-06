@@ -51,7 +51,7 @@ def alphabetizer(a_list: list[str]) -> dict[str, list[str]]:
     for word in a_list:
         idx: int = 0
         letter1 = word[0].lower()
-        if letter1 in ordered_dict and (word[idx] == letter1):
+        if letter1 in ordered_dict and (word[idx].lower() == letter1):
             ordered_dict[letter1] += [word]
         else:
             ordered_dict[letter1] = [word]
