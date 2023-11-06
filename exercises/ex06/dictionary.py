@@ -3,7 +3,7 @@ __author__ = "730668363"
 
 
 def invert(dictionary: dict[str, str]) -> dict[str, str]:
-    """Given an input dictionary, ivert will reverse the order of the keys and values."""
+    """Given an input dictionary, invert will reverse the order of the keys and values."""
     inverted_dicts: dict[str, str] = dict()
     for string_keys in dictionary:
         string_values = dictionary[string_keys]

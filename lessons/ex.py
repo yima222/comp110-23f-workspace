@@ -6,3 +6,8 @@ def shrink(nums: list[str]) -> list[int]:
     return shrunk_list
 
 print(shrink([4, 5, 6, 8]))
+
+def test_key_error() -> None:
+    with pytest.raises(KeyError):
+        my_dictionary = {'blue': 'sky', 'purple': 'sky'}
+        invert(my_dictionary)
