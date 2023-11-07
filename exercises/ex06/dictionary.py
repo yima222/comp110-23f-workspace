@@ -8,7 +8,7 @@ def invert(dictionary: dict[str, str]) -> dict[str, str]:
     for string_keys in dictionary:
         string_values = dictionary[string_keys]
         if string_values in inverted_dicts:
-            raise ValueError("KeyError")
+            raise KeyError("KeyError")
         inverted_dicts[string_values] = string_keys
     return inverted_dicts
 
@@ -37,8 +37,7 @@ def count(org_list: list[str]) -> dict[str, int]:
     current_value_count: int = 0
     for values in org_list:
         if values in org_dictionary:
-            current_value_count += 1
-            org_dictionary[values] = current_value_count
+            org_dictionary[values] += 1
         else:
             current_value_count = 1
             org_dictionary[values] = current_value_count
@@ -50,9 +49,12 @@ def alphabetizer(a_list: list[str]) -> dict[str, list[str]]:
     ordered_dict: dict[str, list[str]] = dict()
     for word in a_list:
         idx: int = 0
-        letter1 = word[0].lower()
-        if letter1 in ordered_dict and (word[idx].lower() == letter1):
-            ordered_dict[letter1] += [word]
+        letter1 = word[idx].lower()
+        if letter1 in ordered_dict:
+            if word[idx].upper() == letter1.upper():
+                ordered_dict[letter1] += [word]
+            elif (word[idx].lower() == letter1):
+                ordered_dict[letter1] += [word]
         else:
             ordered_dict[letter1] = [word]
     return ordered_dict
@@ -60,7 +62,7 @@ def alphabetizer(a_list: list[str]) -> dict[str, list[str]]:
 
 def update_attendance(presence: dict[str, list[str]], week_day: str, student: str) -> dict[str, list[str]]:
     """Adds students to week_day given a presence dict through mutating the dict."""
-    if week_day in presence:
+    if (student in week_day) and (week_day in presence):
         presence[week_day] += [student]
     else:
         presence[week_day] = [student]
