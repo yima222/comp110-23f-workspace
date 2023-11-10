@@ -1,7 +1,7 @@
 """Testing the invert, count, favorite_color, alphabetizer, update_attendance functions."""
 __author__ = "730668363"
 
-from dictionary import invert, favorite_color, count, alphabetizer, update_attendance
+from exercises.ex06.dictionary import invert, favorite_color, count, alphabetizer, update_attendance
 # invert function unit tests
 
 
