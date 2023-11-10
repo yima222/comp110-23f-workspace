@@ -24,7 +24,7 @@ class Point:
         new_point: Point = Point(self.x * factor, self.y * factor)
         return new_point
     
-    def __mul__(self, factor: int | float) -> Point:
+    def __mul__(self, factor: int | float):
         """Multiplication overload to modify the original point by the factor."""
         self.x *= factor
         self.y *= factor
