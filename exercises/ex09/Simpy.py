@@ -54,7 +54,7 @@ class Simpy:
                 new_value = self.values[idx] + rhs
                 final_sum.append(new_value)
                 idx += 1
-        sum_simpy: Simpy = Simpy([final_sum])
+        sum_simpy: Simpy = Simpy(final_sum)
         return sum_simpy
     
     def __pow__(self, rhs: Union[float, Simpy]) -> Simpy:
@@ -72,7 +72,7 @@ class Simpy:
                 powered_value = self.values[idx] ** rhs
                 final_values.append(powered_value)
                 idx += 1
-        powers_simpy: Simpy = Simpy([final_values])
+        powers_simpy: Simpy = Simpy(final_values)
         return powers_simpy
 
     def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
@@ -139,4 +139,5 @@ class Simpy:
             for idx in range(len(rhs)):
                 if rhs[idx] is True:
                     final_get.append(self.values[idx])
-            return final_get 
+            getitem_simpy: Simpy = Simpy(final_get)
+            return getitem_simpy 
