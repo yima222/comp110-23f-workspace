@@ -26,3 +26,31 @@ def find_courses(courses: list[Course], prereq: str) -> list[str]:
                 if p == prereq:
                     results.append(classes.name)
     return results
+
+
+
+"""Second round of practice attempting."""
+class Course:
+    """Models he idea of a UNC course."""
+    name: str
+    level: int
+    prerequisites: list[str]
+
+    def is_valid_course(self, prereq: str) -> bool:
+        if self.level < 400:
+            return False
+        else:
+            for p in self.prerequisites:
+                if p == prereq:
+                    return True
+            return False
+
+
+def find_courses(classes: list[Course], prereq: str) -> list[str]:
+    search_results: list[str] = []
+    for course in classes:
+        if course.level >= 400:
+            for p in course.prerequisites:
+                if p == prereq:
+                    search_results.append(course.name)
+    return search_results

@@ -61,11 +61,14 @@ class Simpy:
         """Overloading operator that raises Simpy object to a power of Simpy or a float."""
         final_values: list[float] = list()
         if type(rhs) is Simpy:
-            idx: int = 0
-            while idx < len(self.values):
-                powered_value = self.values[idx] ** rhs.values[idx]
+            self_idx: int = 0
+            rhs_idx: int = 0
+            while rhs_idx < len(rhs.values):
+                powered_value = self.values[self_idx] ** rhs.values[rhs_idx]
                 final_values.append(powered_value)
-                idx += 1
+                rhs_idx += 1
+                if self_idx < len(self.values) - 1:
+                    self_idx += 1
         elif type(rhs) is float:
             idx: int = 0
             while idx < len(self.values):
